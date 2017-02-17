@@ -1,0 +1,15 @@
+<h4>Удаление записи в таблице.</h4>
+<table>
+    <tr>
+        <td>Имя таблицы: </td>
+        <td><input type="text" ng-model="deleteCtrl.tableName" autocomplete="on"></td>
+    </tr>
+    <tr>
+        <td>ID:  </td>
+        <td><input type="text" ng-model="deleteCtrl.recordId" autocomplete="on"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Удалить данные" ng-click="deleteCtrl.deleteRecord()"></td>
+    </tr>
+</table>

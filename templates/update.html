@@ -1,0 +1,28 @@
+<h4>Обновление записи в таблице.</h4>
+
+<table>
+    <tr>
+        <td>Имя таблицы: </td>
+        <td><input type="text" ng-model="updateCtrl.tableName" autocomplete="on"></td>
+    </tr>
+    <tr>
+        <td>ID:  </td>
+        <td><input type="text" ng-model="updateCtrl.recordId" autocomplete="on"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Получить данные" ng-click="updateCtrl.getRecord()"></td>
+    </tr>
+
+
+<div>
+        <tr ng-repeat="(key, value) in updateCtrl.columnDataList">
+            <td>{{key}} : </td>
+            <td><input type="text" ng-model="updateCtrl.columnDataList[key]"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button"  ng-if="updateCtrl.showColumn==true" value="Обновить" ng-click="updateCtrl.updateRecord()"></td>
+        </tr>
+</div>
+</table>

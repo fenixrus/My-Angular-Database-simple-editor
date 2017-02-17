@@ -1,0 +1,26 @@
+<h4>Выборка таблиц/записей таблицы.</h4>
+<table>
+    <tr>
+        <td>Показать все таблицы:</td>
+        <td><input type="checkbox" checked ng-change="selectCtrl.showAllTables()" ng-model="selectCtrl.isShowAllTables"></td>
+    </tr>
+    <tr>
+        <td>Имя таблицы: </td>
+        <td><input type="text" ng-model="selectCtrl.tableName"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Выборка" ng-click="selectCtrl.selectRecords()"></td>
+    </tr>
+</table>
+
+<div ng-if="selectCtrl.records.length > 0">
+    <div ng-if="selectCtrl.type == 'tables'">Таблицы: </div>
+    <div ng-if="selectCtrl.type == 'records'">Записи таблицы {{selectCtrl.tableName}}: </div>
+    <div ng-repeat="record in selectCtrl.records track by $index">
+        <div>
+            {{$index + 1}}.
+            {{record}}
+        </div>
+    </div>
+</div>

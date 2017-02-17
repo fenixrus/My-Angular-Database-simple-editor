@@ -1,0 +1,20 @@
+<h4>Добавление записи в таблице.</h4>
+<table>
+    <tr>
+        <td>Имя таблицы: </td>
+        <td><input type="text" ng-model="insertCtrl.tableName" autocomplete="on"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Получить поля таблицы" ng-click="insertCtrl.selectTable()"></td>
+    </tr>
+</table>
+
+<div ng-if="insertCtrl.columnList.length > 0">
+    <table>
+        <tr ng-repeat="column in insertCtrl.columnList">
+            <td>{{column}} : </td><td><input type="text" ng-model="insertCtrl.columnData[column]"></td>
+        </tr>
+    <tr><td></td><td><input type="button" value="Вставить" ng-click="insertCtrl.insertRecord()"></td></tr>
+    </table>
+</div>
